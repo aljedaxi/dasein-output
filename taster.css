@@ -1,9 +1,0 @@
-.gridform {
-	display: grid;
-	grid-template-columns: 1fr 2.4142135623fr;
-	gap: 4px;
-}
-
-.gridform > h2 {
-	grid-column: span 2;
-}
