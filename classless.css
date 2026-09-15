@@ -1,0 +1,49 @@
+:root {
+  --ratio: 1.61803398875;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+
+p {
+	text-indent: var(--s0);
+	margin-block: var(--s-4);
+    margin-inline: 0;
+	text-wrap: pretty;
+}
+h1 {
+    font-size: var(--s2);
+}
+h2, h3, h4 {
+    font-size: var(--s1);
+}
+h1, h2, h3, h4 {
+	text-wrap: balance;
+}
+blockquote, pre {
+	margin: var(--s0);
+}
+html {
+	display: grid;
+	grid-template-columns: 1fr min(70ch, 100%) 1fr;
+	background: 0 0;
+	width: 100%;
+	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+	font-weight: normal;
+    box-sizing: border-box;
+    font-size: var(--s0);
+}
+html > * {
+	grid-column: 2;
+}
+code {
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; 
+}
