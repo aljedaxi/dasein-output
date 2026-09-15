@@ -13,6 +13,15 @@
   --s5: calc(var(--s4) * var(--ratio));
 }
 
+@media (prefers-color-scheme: dark) {
+	html{background-color: #11111b; color:#cdd6f4;}
+	a{color:#b4befe}
+}
+@media (prefers-color-scheme: light) {
+	html{background-color: #dce0e8; color:#4c4f69;}
+	a{color:#7287fd}
+}
+
 p {
 	text-indent: var(--s0);
 	margin-block: var(--s-4);
@@ -34,7 +43,6 @@ blockquote, pre {
 html {
 	display: grid;
 	grid-template-columns: 1fr min(70ch, 100%) 1fr;
-	background: 0 0;
 	width: 100%;
 	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 	font-weight: normal;
