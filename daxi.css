@@ -1,16 +1,42 @@
-ul.csv {display: inline; list-style: none; margin: 0; padding: 0;}
-ul.csv li {display: inline;}
-ul.csv li:after { content: ", ";}
-ul.csv li:last-child:after { content: ""; }
-body {display:grid;gap:8px;}
-
+:root {
+  --ratio: 1.61803398875;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+body > * {
+    width: fit-content;
+    padding: var(--s0);
+}
 @media (prefers-color-scheme: dark) {
-	body{background-image:url(/public/favicon.avif);background-size:100%;color:white;}
-	body>*{background-color:black;width:fit-content;padding:8px;}
-	a{color:#d2738a}
+  body {
+    background-image: url(/public/favicon.avif);
+    background-size: 100%;
+    color: white;
+  }
+  body > * {
+    background-color: black;
+  }
+  a {
+	  color:#d2738a;
+  }
 }
 @media (prefers-color-scheme: light) {
-	body{background-image:url(/public/erde.avif);background-size:100%;color:black;}
-	body>*{background-color:#fff3cb;width:fit-content;padding:8px;}
-	a{color:#415B77}
+  body {
+    background-image: url(/public/erde.avif);
+    background-size: 100%;
+    color: black;
+  }
+  body > * {
+    background-color: #fff3cb;
+  }
+  a{color:#415B77};
 }
