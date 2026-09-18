@@ -13,8 +13,8 @@
   --s5: calc(var(--s4) * var(--ratio));
 }
 body > * {
-    width: fit-content;
-    padding: var(--s0);
+  width: fit-content;
+  padding: var(--s0);
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -26,7 +26,7 @@ body > * {
     background-color: black;
   }
   a {
-	  color:#d2738a;
+    color: #d2738a;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -38,5 +38,7 @@ body > * {
   body > * {
     background-color: #fff3cb;
   }
-  a{color:#415B77};
+  a {
+    color: #415b77;
+  }
 }
