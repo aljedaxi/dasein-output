@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <link href="/daxi.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/daxi.css" />
     <meta charset="utf-8" />
-    <link href="/favicon.ico" rel="icon" sizes="any" />
+    <link ref="icon" sizes="any" href="/favicon.ico" />
     <title>dasein online</title>
     <script type="module">
       const options = document.querySelector("#quips").options;
@@ -16,37 +16,35 @@
     <main>
       <h2>good articles:</h2>
       <ul>
-        <li><a href="/articles/getting-into-tea/">getting into tea</a></li>
         <li><a href="/articles/categories-and-ai/">categories and ai</a></li>
+        <li><a href="/articles/getting-into-tea/">getting into tea</a></li>
+        <li><a href="/articles/pull-out/">pull out</a></li>
         <li>
           <a href="/articles/react-is-still-a-library-lol/"
             >react is still a library lol</a
           >
         </li>
-        <li><a href="/articles/pull-out/">pull out</a></li>
       </ul>
-      <h2>other things:</h2>
-      <ul>
-        <li>this is a personal website</li>
-      </ul>
-      <datalist id="quips">
-        <option>i am not</option>
-        <option>welcome to my homepage! you can have fun here!</option>
-        <option>encoding programs into janet, epic style</option>
-        <option>
-          made with
-          <a href="https://github.com/aljedaxi/sd/blob/main/zettel/dump-html"
-            >an exceptionally ugly shell script</a
-          >, for fun
-        </option>
-        <option>
-          view the source code
-          <a href="https://github.com/aljedaxi/dasein-output">here</a>
-        </option>
-        <option>
-          i wish i could write something that wasn't secretly an ad
-        </option>
-      </datalist>
+      <h2>this is a personal website</h2>
     </main>
+    <datalist id="quips">
+      <option>i am not</option>
+      <option>welcome to my homepage! you can have fun here!</option>
+      <option>encoding programs into janet, epic style</option>
+      <option>
+        i wish i could write something that wasn&#39;t secretly an ad
+      </option>
+      <option>
+        made with
+        <a href="https://github.com/aljedaxi/sd/blob/main/zettel/dump-html"
+          >an exceptionally ugly shell script</a
+        >
+        for fun
+      </option>
+      <option>
+        view the source code
+        <a href="https://github.com/aljedaxi/dasein-output"> here</a>
+      </option>
+    </datalist>
   </body>
 </html>
