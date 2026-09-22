@@ -2,24 +2,11 @@
 #! nix shell github:aljedaxi/de-logseqify-markdown --command bash
 #grab dc.type=text files and convert them to html
 
-read -r -d '' preamble <<- EOF
-<!doctype html>
-<html lang="en-ca">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link href="/classless.css" rel="stylesheet">
-EOF
-read -r -d '' postamble <<- EOF
-</html>
-EOF
-
 while read x; 
 do
   justName=`basename "${x%.*}" | sed "s/ /-/g"`
   mkdir -p $1/${justName}
-  echo $justName
-  echo $preamble > $1/${justName}/index.html
-  echo "<title>${justName}</title>" >> $1/${justName}/index.html
-  de-logseqify-markdown "$HOME/zettel/pages/$x.md" >> $1/${justName}/index.html
-  echo $postamble >> $1/${justName}/index.html
+  { echo "<title>${justName}</title>"
+    de-logseqify-markdown "$HOME/zettel/pages/$x.md"
+  } | janet layout.janet > $1/${justName}/index.html
 done < /dev/stdin
