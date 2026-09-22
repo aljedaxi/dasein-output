@@ -13,7 +13,7 @@ read -r -d '' postamble <<- EOF
 </html>
 EOF
 
-sd zettel api | while read x; 
+while read x; 
 do
   justName=`basename "${x%.*}" | sed "s/ /-/g"`
   mkdir -p $1/${justName}
@@ -22,4 +22,4 @@ do
   echo "<title>${justName}</title>" >> $1/${justName}/index.html
   de-logseqify-markdown "$HOME/zettel/pages/$x.md" >> $1/${justName}/index.html
   echo $postamble >> $1/${justName}/index.html
-done
+done < /dev/stdin

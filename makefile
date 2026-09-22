@@ -1,8 +1,16 @@
+result: clean result/articles result/index.html
+
 serve:
 	npx serve result
 
-result/articles:
-	@./dump-html $@ 1>&2
+clean:
+	@rm article-names
+
+article-names:
+	@sd zettel api > $@
+
+result/articles: article-names
+	@./dump-html $@ < $< 1>&2
 	@npx prettier -w $@/*
 
 result/index.html: result/articles
