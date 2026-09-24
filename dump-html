@@ -4,9 +4,9 @@
 
 while read x; 
 do
-  justName=`basename "${x%.*}" | sed "s/ /-/g"`
+  justName=`echo ${x} | sed "s/ /-/g"`
   mkdir -p $1/${justName}
-  { echo "<title>${justName}</title>"
+  { echo "<title>${x}</title>"
     de-logseqify-markdown "$HOME/zettel/pages/$x.md"
   } | janet layout.janet > $1/${justName}/index.html
 done < /dev/stdin
