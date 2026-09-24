@@ -9,6 +9,9 @@ clean:
 article-names:
 	@sd zettel api > $@
 
+og: result/articles
+	@find $< | grep index.html | xargs nix run github:aljedaxi/open-grapher
+
 result/articles: article-names
 	@./dump-html $@ < $< 1>&2
 	@npx prettier -w $@/*
