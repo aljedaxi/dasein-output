@@ -12,6 +12,9 @@ article-names:
 og: result/articles
 	@find $< | grep index.html | xargs nix run github:aljedaxi/open-grapher
 
+result/feed.rss: og
+	@nix run github:aljedaxi/ogp2rss < $< > $@
+
 result/articles: article-names
 	@./dump-html $@ < $< 1>&2
 	@npx prettier -w $@/*
