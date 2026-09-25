@@ -5,8 +5,10 @@
 while read x; 
 do
   justName=`echo ${x} | sed "s/ /-/g"`
+  index="${justName}/index.html"
   mkdir -p $1/${justName}
   { echo "<title>${x}</title>"
+    echo "<meta property=\"og:url\" content=\"https://dasein-online.ca/articles/${index}\"/>"
     de-logseqify-markdown "$HOME/zettel/pages/$x.md"
-  } | janet layout.janet > $1/${justName}/index.html
+  } | janet layout.janet > $1/${index}
 done < /dev/stdin
