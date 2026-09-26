@@ -1,4 +1,4 @@
-result: clean result/articles result/index.html
+result: clean result/articles result/index.html result/feed.rss
 
 serve:
 	npx serve result
@@ -9,8 +9,8 @@ clean:
 article-names:
 	@sd zettel api > $@
 
-og: result/articles
-	@find $< | grep index.html | xargs nix run github:aljedaxi/open-grapher
+og: 
+	@find result/articles | grep index.html | xargs nix run github:aljedaxi/open-grapher > $@
 
 result/feed.rss: og
 	@nix run github:aljedaxi/ogp2rss < $< > $@
