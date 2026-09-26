@@ -41,6 +41,7 @@ td {
 
 p {
   text-indent: var(--s0);
+  text-align: justify;
   margin-block: var(--s-4);
   margin-inline: 0;
   text-wrap: pretty;
